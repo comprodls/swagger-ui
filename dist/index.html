@@ -1,104 +1,125 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>comproDLS | API Documentation</title>
-  <link href='//fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'/>
-  <link href='css/reset.css' media='screen' rel='stylesheet' type='text/css'/>
-  <link href='css/screen.css' media='screen' rel='stylesheet' type='text/css'/>
-  <link href='css/reset.css' media='print' rel='stylesheet' type='text/css'/>
-  <link href='css/screen.css' media='print' rel='stylesheet' type='text/css'/>
-  <script type="text/javascript" src="lib/shred.bundle.js"></script>
-  <script src='lib/jquery-1.8.0.min.js' type='text/javascript'></script>
-  <script src='lib/jquery.slideto.min.js' type='text/javascript'></script>
-  <script src='lib/jquery.wiggle.min.js' type='text/javascript'></script>
-  <script src='lib/jquery.ba-bbq.min.js' type='text/javascript'></script>
-  <script src='lib/handlebars-1.0.0.js' type='text/javascript'></script>
-  <script src='lib/underscore-min.js' type='text/javascript'></script>
-  <script src='lib/backbone-min.js' type='text/javascript'></script>
-  <script src='lib/swagger.js' type='text/javascript'></script>
-  <script src='lib/swagger-client.js' type='text/javascript'></script>
-  <script src='swagger-ui.js' type='text/javascript'></script>
-  <script src='lib/highlight.7.3.pack.js' type='text/javascript'></script>
+    <title>comproDLS | API Documentation</title>
+    <link href='//fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'/>
+    <link href='css/reset.css' media='screen' rel='stylesheet' type='text/css'/>
+    <link href='css/screen.css' media='screen' rel='stylesheet' type='text/css'/>
+    <link href='css/reset.css' media='print' rel='stylesheet' type='text/css'/>
+    <link href='css/screen.css' media='print' rel='stylesheet' type='text/css'/>
+    <script type="text/javascript" src="lib/shred.bundle.js"></script>
+    <script src='lib/jquery-1.8.0.min.js' type='text/javascript'></script>
+    <script src='lib/jquery.slideto.min.js' type='text/javascript'></script>
+    <script src='lib/jquery.wiggle.min.js' type='text/javascript'></script>
+    <script src='lib/jquery.ba-bbq.min.js' type='text/javascript'></script>
+    <script src='lib/handlebars-1.0.0.js' type='text/javascript'></script>
+    <script src='lib/underscore-min.js' type='text/javascript'></script>
+    <script src='lib/backbone-min.js' type='text/javascript'></script>
+    <script src='lib/swagger.js' type='text/javascript'></script>
+    <script src='lib/swagger-client.js' type='text/javascript'></script>
+    <script src='swagger-ui.js' type='text/javascript'></script>
+    <script src='lib/highlight.7.3.pack.js' type='text/javascript'></script>
 
-  <!-- enabling this will enable oauth2 implicit scope support -->
-  <script src='lib/swagger-oauth.js' type='text/javascript'></script>
-  <script type="text/javascript">
-    $(function () {
-      var url = window.location.search.match(/url=([^&]+)/);
-      if (url && url.length > 1) {
-        url = url[1];
-      } else {
-        url = "http://petstore.swagger.wordnik.com/v2/swagger.json";
-      }
-      window.swaggerUi = new SwaggerUi({
-        url: url,
-        dom_id: "swagger-ui-container",
-        supportedSubmitMethods: ['get', 'post', 'put', 'delete'],
-        onComplete: function(swaggerApi, swaggerUi){
-          log("Loaded SwaggerUI");
-          if(typeof initOAuth == "function") {
-            /*
-            initOAuth({
-              clientId: "your-client-id",
-              realm: "your-realms",
-              appName: "your-app-name"
-            });
-            */
-          }
-          $('pre code').each(function(i, e) {
-            hljs.highlightBlock(e)
-          });
-        },
-        onFailure: function(data) {
-          log("Unable to Load SwaggerUI");
-        },
-        docExpansion: "none",
-        sorter : "alpha"
-      });
+    <!-- enabling this will enable oauth2 implicit scope support -->
+    <script src='lib/swagger-oauth.js' type='text/javascript'></script>
+    <script type="text/javascript">
+    $(function ()
+    {
+        var api_key = "default";
+        var url = window.location.search.match(/url=([^&]+)/);
+        if (url && url.length > 1)
+            url = url[1];
+        else
+            url = "http://petstore.swagger.wordnik.com/v2/swagger.json";
+        window.swaggerUi = new SwaggerUi(
+        {
+            url: url,
+            dom_id: "swagger-ui-container",
+            supportedSubmitMethods: ['get', 'post', 'put', 'delete'],
+            onComplete: function(swaggerApi, swaggerUi)
+            {
+                log("Loaded SwaggerUI");
+                if(typeof initOAuth == "function")
+                {
+                    /*
+                    initOAuth({
+                    clientId: "your-client-id",
+                    realm: "your-realms",
+                    appName: "your-app-name"
+                    });
+                    */
+                }
+                $('pre code').each(function(i, e)
+                {
+                    hljs.highlightBlock(e)
+                });
+                $('input.parameter[name="Authorization"]').val(api_key);
+            },
+            onFailure: function(data)
+            {
+                log("Unable to Load SwaggerUI");
+            },
+            docExpansion: "none",
+            sorter : "alpha"
+        });
 
-      function addApiKeyAuthorization() {
-        var key = $('#input_apiKey')[0].value;
-        log("key: " + key);
-        if(key && key.trim() != "") {
-            log("added key " + key);
-            window.authorizations.add("api_key", new ApiKeyAuthorization("api_key", key, "query"));
+        function addApiKeyAuthorization(key)
+        {
+            //var key = $('#input_apiKey')[0].value;
+            log("key: " + key);
+            if(key && key.trim() != "")
+            {
+                log("added key " + key);
+                window.authorizations.add("api_key", new ApiKeyAuthorization("Authorization", key, "header"));
+            }
         }
-      }
 
-      $('#input_apiKey').change(function() {
-        addApiKeyAuthorization();
-      });
+        /*
+        $('#input_apiKey').change(function()
+        {
+            addApiKeyAuthorization();
+        });
+        */
 
-      // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
-      /*
-        var apiKey = "myApiKeyXXXX123456789";
-        $('#input_apiKey').val(apiKey);
-        addApiKeyAuthorization();
-      */
-
-      window.swaggerUi.load();
-  });
-  </script>
+        // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
+        $.ajax(
+        {
+            type       : 'POST',
+            url        : 'http://auth.comprodls.com/auth/891a61ba-9574-11e4-a65d-8bd1fddaae60/460ad780-9577-11e4-99f5-efecc95611a7/token',
+            data       : JSON.stringify({"username":"harry", "password":"Compro11"}),
+            dataType   : "json",
+            contentType: "application/json",
+            success    : function(data, error)
+            {
+                if(error == 'success' && data)
+                    if(data.access_token)
+                    {
+                        api_key = data.access_token;
+                        /*addApiKeyAuthorization(data.access_token);*/
+                        window.swaggerUi.load();
+                    }
+            }
+        });
+    });
+    </script>
 </head>
-
 <body class="swagger-section">
-<div id='header'>
-  <div class="swagger-ui-wrap">
-    <a id="logo" href="http://swagger.io">comproDLS | API Documentation</a>
-    <form id='api_selector'>
-      <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
-      <!-- <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div> -->
-      <div class='input'><a id="explore" href="#">Explore</a></div>
-    </form>
-  </div>
-</div>
-<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
-<div class="swagger-ui-wrap">
-  <h2>Welcome to comproDLS API Documention...</h2>
-  <p class="info_description">comproDLS includes a REST API for accessing and modifying data externally from the main application, in your own programs and scripts. This documentation describes the resources that make up the API. To get started, you'll want to review the general basics on <a href="auth.html">Authentication</a>, along with specific REST resources below. Specify an appropriate API endpoint URL, and select <strong>Explore</strong> to view documentation for that API.</p>
-  <hr/>
-</div>
-
-<div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+    <div id='header'>
+        <div class="swagger-ui-wrap">
+            <a id="logo" href="http://swagger.io">comproDLS | API Documentation</a>
+            <form id='api_selector'>
+                <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
+                <!-- <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div> -->
+                <div class='input'><a id="explore" href="#">Explore</a></div>
+            </form>
+        </div>
+    </div>
+    <div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
+    <div class="swagger-ui-wrap">
+        <h2>Welcome to comproDLS API Documention...</h2>
+        <p class="info_description">comproDLS includes a REST API for accessing and modifying data externally from the main application, in your own programs and scripts. This documentation describes the resources that make up the API. To get started, you'll want to review the general basics on <a href="auth.html">Authentication</a>, along with specific REST resources below. Specify an appropriate API endpoint URL, and select <strong>Explore</strong> to view documentation for that API.</p>
+        <hr/>
+    </div>
+    <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
 </body>
 </html>
