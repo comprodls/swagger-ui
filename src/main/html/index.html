@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Swagger UI</title>
+  <title>comproDLS | API Documentation</title>
   <link href='css/typography.css' media='screen' rel='stylesheet' type='text/css'/>
   <link href='css/reset.css' media='screen' rel='stylesheet' type='text/css'/>
   <link href='css/screen.css' media='screen' rel='stylesheet' type='text/css'/>
@@ -47,6 +47,7 @@
           $('pre code').each(function(i, e) {
             hljs.highlightBlock(e)
           });
+          $('input.parameter[name="Authorization"]').val(api_key);
         },
         onFailure: function(data) {
           log("Unable to Load SwaggerUI");
@@ -56,43 +57,61 @@
       });
 
       function addApiKeyAuthorization() {
-        var key = $('#input_apiKey')[0].value;
+        //var key = $('#input_apiKey')[0].value;
         log("key: " + key);
         if(key && key.trim() != "") {
             log("added key " + key);
-            window.authorizations.add("api_key", new ApiKeyAuthorization("api_key", key, "query"));
+            window.authorizations.add("api_key", new ApiKeyAuthorization("api_key", key, "header"));
         }
       }
 
+      /*
       $('#input_apiKey').change(function() {
         addApiKeyAuthorization();
       });
-
-      // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
-      /*
-        var apiKey = "myApiKeyXXXX123456789";
-        $('#input_apiKey').val(apiKey);
-        addApiKeyAuthorization();
       */
 
-      window.swaggerUi.load();
-  });
+      // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
+      $.ajax(
+      {
+        type       : 'POST',
+        url        : 'http://auth.comprodls.com/auth/891a61ba-9574-11e4-a65d-8bd1fddaae60/460ad780-9577-11e4-99f5-efecc95611a7/token',
+        data       : JSON.stringify({"username":"harry", "password":"Compro11"}),
+        dataType   : "json",
+        contentType: "application/json",
+        success    : function(data, error)
+        {
+            if(error == 'success' && data) {
+                if(data.access_token) {
+                    api_key = data.access_token;
+                    /*addApiKeyAuthorization(data.access_token);*/
+                    window.swaggerUi.load();
+                }
+            }
+        }
+       });
+    });
   </script>
 </head>
 
 <body class="swagger-section">
 <div id='header'>
   <div class="swagger-ui-wrap">
-    <a id="logo" href="http://swagger.io">swagger</a>
+    <a id="logo" href="http://swagger.io">comproDLS | API Documentation</a>
     <form id='api_selector'>
       <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
-      <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
+      <!--<div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>-->
       <div class='input'><a id="explore" href="#">Explore</a></div>
     </form>
   </div>
 </div>
 
 <div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
+<div class="swagger-ui-wrap">
+    <h2>Welcome to comproDLS API Documention...</h2>
+    <p class="info_description">Specify an appropriate API endpoint URL, and select <strong>Explore</strong> to view documentation for that API.</p>
+    <hr/>
+</div>
 <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
 </body>
 </html>
