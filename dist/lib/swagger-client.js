@@ -1347,8 +1347,6 @@ Operation.prototype.setContentTypes = function(args, opts) {
     }
     else if (this.type == 'DELETE')
       body = '{}';
-    else if (this.type != 'DELETE')
-      consumes = null;
   }
 
   if (consumes && this.consumes) {
