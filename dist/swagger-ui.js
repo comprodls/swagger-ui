@@ -318,6 +318,7 @@ Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
             return options.inverse(this);
     }
 });
+
 this["Handlebars"]["templates"]["main"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
   var stack1, lambda=this.lambda, escapeExpression=this.escapeExpression, buffer = "  <div class=\"info_title\">"
     + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.info : depth0)) != null ? stack1.title : stack1), depth0))
@@ -936,11 +937,11 @@ this["Handlebars"]["templates"]["signature"] = Handlebars.template({"1":function
     + escapeExpression(((helper = (helper = helpers.signature || (depth0 != null ? depth0.signature : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"signature","hash":{},"data":data}) : helper)))
     + "\n";
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var stack1, helperMissing=helpers.helperMissing;
+  var stack1, helperMissing=helpers.helperMissing, buffer = "";
   stack1 = ((helpers.ifCond || (depth0 && depth0.ifCond) || helperMissing).call(depth0, (depth0 != null ? depth0.sampleJSON : depth0), "||", (depth0 != null ? depth0.sampleXML : depth0), {"name":"ifCond","hash":{},"fn":this.program(1, data),"inverse":this.program(7, data),"data":data}));
-  if (stack1 != null) { return stack1; }
-  else { return ''; }
-  },"useData":true});
+  if (stack1 != null) { buffer += stack1; }
+  return buffer;
+},"useData":true});
 this["Handlebars"]["templates"]["status_code"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
   var lambda=this.lambda, escapeExpression=this.escapeExpression;
   return "      <tr>\n        <td>"
@@ -959,7 +960,7 @@ this["Handlebars"]["templates"]["status_code"] = Handlebars.template({"1":functi
   buffer += "</td>\n<td width='50%'><span class=\"model-signature\" /></td>\n<td class=\"headers\">\n  <table>\n    <tbody>\n";
   stack1 = helpers.each.call(depth0, (depth0 != null ? depth0.headers : depth0), {"name":"each","hash":{},"fn":this.program(1, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
-  return buffer + "    </tbody>\n  </table>\n</td>";
+  return buffer + "    </tbody>\n  </table>\n</td>\n";
 },"useData":true});
 /**
  * swagger-client - swagger-client is a javascript client for use with swaggering APIs.
@@ -25059,6 +25060,7 @@ SwaggerUi.Views.ApiKeyButton = Backbone.View.extend({ // TODO: append this to gl
   }
 
 });
+
 'use strict';
 
 SwaggerUi.Views.BasicAuthButton = Backbone.View.extend({
@@ -25109,6 +25111,7 @@ SwaggerUi.Views.BasicAuthButton = Backbone.View.extend({
   }
 
 });
+
 'use strict';
 
 SwaggerUi.Views.ContentTypeView = Backbone.View.extend({
@@ -25120,6 +25123,7 @@ SwaggerUi.Views.ContentTypeView = Backbone.View.extend({
     return this;
   }
 });
+
 'use strict';
 
 SwaggerUi.Views.HeaderView = Backbone.View.extend({
@@ -26182,6 +26186,7 @@ SwaggerUi.Views.ParameterContentTypeView = Backbone.View.extend({
   }
 
 });
+
 'use strict';
 
 SwaggerUi.Views.ParameterView = Backbone.View.extend({
@@ -27392,6 +27397,7 @@ SwaggerUi.Views.ResourceView = Backbone.View.extend({
     Docs[fnName](e.currentTarget.getAttribute('data-id'));
   }
 });
+
 'use strict';
 
 SwaggerUi.Views.ResponseContentTypeView = Backbone.View.extend({
@@ -27403,6 +27409,7 @@ SwaggerUi.Views.ResponseContentTypeView = Backbone.View.extend({
     return this;
   }
 });
+
 'use strict';
 
 SwaggerUi.Views.SignatureView = Backbone.View.extend({
@@ -27481,6 +27488,7 @@ SwaggerUi.Views.SignatureView = Backbone.View.extend({
     }
   }
 });
+
 'use strict';
 
 SwaggerUi.Views.StatusCodeView = Backbone.View.extend({
@@ -27512,4 +27520,5 @@ SwaggerUi.Views.StatusCodeView = Backbone.View.extend({
     $('.model-signature', this.$el).append(responseModelView.render().el);
     return this;
   }
-});}).call(this);
+});
+}).call(this);
