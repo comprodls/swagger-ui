@@ -68,7 +68,8 @@
           }
 
           /*addApiKeyAuthorization();*/
-          $('input.parameter[name="Authorization"]').val(api_key);
+//          $('input.parameter[name="Authorization"]').val(api_key);
+          $('input.parameter[name="Authorization"]').val('');
         },
         onFailure: function(data) {
           log("Unable to Load SwaggerUI");
@@ -96,25 +97,25 @@
         var apiKey = "myApiKeyXXXX123456789";
         $('#input_apiKey').val(apiKey);
       */
-      var apiKey = '';
-      $.ajax(
-      {
-        type       : 'POST',
-        url        : 'http://auth.comprodls.com/auth/dev/token',
-        data       : JSON.stringify({username: 'student1', password: 'Compro11'}),
-        dataType   : 'json',
-        contentType: 'application/json',
-        success    : function(data, error)
-        {
-          if(error == 'success' && data) {
-            if(data.access_token) {
-              api_key = data.access_token;
-              /*addApiKeyAuthorization(data.access_token);*/
-              window.swaggerUi.load();
-            }
-          }
-        }
-       });
+//      var apiKey = '';
+//      $.ajax(
+//      {
+//        type       : 'POST',
+//        url        : 'http://auth.comprodls.com/auth/dev/token',
+//        data       : JSON.stringify({username: 'student1', password: 'Compro11'}),
+//        dataType   : 'json',
+//        contentType: 'application/json',
+//        success    : function(data, error)
+//        {
+//          if(error == 'success' && data) {
+//            if(data.access_token) {
+//              api_key = data.access_token;
+//              /*addApiKeyAuthorization(data.access_token);*/
+//              window.swaggerUi.load();
+//            }
+//          }
+//        }
+//       });
 
       function log() {
         if ('console' in window) {
