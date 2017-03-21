@@ -70,6 +70,7 @@
           /*addApiKeyAuthorization();*/
 //          $('input.parameter[name="Authorization"]').val(api_key);
           $('input.parameter[name="Authorization"]').val('');
+          window.swaggerUi.load();
         },
         onFailure: function(data) {
           log("Unable to Load SwaggerUI");
