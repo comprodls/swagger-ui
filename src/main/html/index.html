@@ -89,7 +89,11 @@
         }
       }
 
-      /*$('#input_apiKey').change(addApiKeyAuthorization);*/
+
+
+      $('#input_apiKey').change(addApiKeyAuthorization);
+
+      window.swaggerUi.load();
 
       // if you have an apiKey you would like to pre-populate on the page for demonstration purposes...
       /*
@@ -97,7 +101,7 @@
         $('#input_apiKey').val(apiKey);
       */
       var apiKey = '';
-      $.ajax(
+      /*$.ajax(
       {
         type       : 'POST',
         url        : 'http://auth.comprodls.com/auth/dev/token',
@@ -109,12 +113,13 @@
           if(error == 'success' && data) {
             if(data.access_token) {
               api_key = data.access_token;
-              /*addApiKeyAuthorization(data.access_token);*/
+              //addApiKeyAuthorization(data.access_token);
               window.swaggerUi.load();
             }
           }
         }
        });
+    */
 
       function log() {
         if ('console' in window) {
