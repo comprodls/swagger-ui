@@ -38,7 +38,11 @@
     "mock-api": "json-server --watch test/e2e/db.json --port 3204",
     "e2e": "npm-run-all --parallel -r hot-server mock-api test-e2e"
   },
+  "engines": {
+    "node": "6.11.1"
+  },
   "dependencies": {
+    "express": "4.9.8",
     "base64-js": "^1.2.0",
     "brace": "0.7.0",
     "deep-extend": "0.4.1",
