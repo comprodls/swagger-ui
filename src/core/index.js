@@ -28,7 +28,7 @@ module.exports = function SwaggerUI(opts) {
     url: "",
     urls: null,
     layout: "BaseLayout",
-    docExpansion: "list",
+    /*docExpansion: "list",*/
     maxDisplayedTags: null,
     filter: null,
     validatorUrl: "https://online.swagger.io/validator",
@@ -37,8 +37,8 @@ module.exports = function SwaggerUI(opts) {
     displayOperationId: false,
     displayRequestDuration: false,
     deepLinking: true,
-    tagsSorter: "alpha",
-    operationsSorter: "alpha",
+    /*tagsSorter: "alpha",*/
+    /*operationsSorter: "method",*/
     docExpansion: "none",
 
     // Initial set of plugins ( TODO rename this, or refactor - we don't need presets _and_ plugins. Its just there for performance.
