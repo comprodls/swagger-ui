@@ -65,6 +65,28 @@
 </svg>
 
 <div id="swagger-ui"></div>
+<div id="comprodls-services" style="display:none">
+   <ul>
+     <li>
+       <a href="http://auth.comprodls.com" ><h3>Service Auth</h3></a>
+     </li>
+     <li>
+       <a href="http://product.comprodls.com" ><h3>Service Product</h3></a>
+     </li>
+     <li>
+       <a href="http://xapi.comprodls.com" ><h3>Service Xapi</h3></a>
+     </li>
+     <li>
+       <a href="http://analytics.comprodls.com" ><h3>Service Analytics</h3></a>
+     </li>
+     <li>
+       <a href="http://activity.comprodls.com" ><h3>Service Activity</h3></a>
+     </li>
+     <li>
+       <a href="http://collab.comprodls.com" ><h3>Service Collab</h3></a>
+     </li>
+   </ul>
+</div>
 
 <script src="./swagger-ui-bundle.js"> </script>
 <script src="./swagger-ui-standalone-preset.js"> </script>
@@ -73,7 +95,7 @@ window.onload = function() {
   
   // Build a system
   const ui = SwaggerUIBundle({
-    url: "http://petstore.swagger.io/v2/swagger.json",
+    url: "",
     dom_id: '#swagger-ui',
     deepLinking: true,
     presets: [
@@ -87,6 +109,11 @@ window.onload = function() {
   })
 
   window.ui = ui
+
+  //If no query parameters found, display services list page.
+  if(!window.location.search.substring(1)) {
+    document.getElementById("comprodls-services").style.display="unset";
+  }
 }
 </script>
 </body>
