@@ -131,7 +131,7 @@ export default class Topbar extends React.Component {
           <div className="topbar-wrapper">
             <Link href="#" title="comproDLS">
               <img height="30" width="30" src={ Logo }/>
-              <span>comproDLS™ | Services & APIs</span>
+              <span>comproDLS™ | Service Explorer</span>
             </Link>
             <form className="download-url-wrapper" onSubmit={formOnSubmit}>
               {control}
