@@ -19,3 +19,14 @@ body {
 .service-shortcuts li {
   display: inline;
 }
+
+.service-shortcuts li a{
+  display: inline;
+  border-bottom: 1px solid;
+  text-decoration: none;
+}
+
+#dls-banner {
+  padding-left: 5%;
+  padding-right: 5%;
+}
