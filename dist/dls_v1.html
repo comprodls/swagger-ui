@@ -1,0 +1,132 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="./favicon-dls.ico" sizes="16x16" />
+
+  <title>comproDLS™ | Service Explorer</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!--Custom CSS-->
+  <link href="./dls-custom.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">comproDLS™ | Service Explorer</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SDKs & Toolkits<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="https://www.npmjs.com/package/comprodls-sdk">NodeJS</a></li>
+              <li><a href="http://nexus.comprodls.com/#browse/browse/assets:maven-snapshots">JAVA</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1><i class="fa fa-life-ring" aria-hidden="true"></i> comproDLS™ | Learning Stack</h1>
+      <p>A set of cloud hosted APIs, components and data-stores which forms the core foundation of any next-gen learning solution.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <a href="http://auth.comprodls.com"><h2>Authentication</h2></a>
+        <p>comproDLS™ AUTH Services provide a core foundation for a next-gen learning organization, enabling every environment/institution /learning-group to setup their own fit-for-purpose digital learning environment.</p>
+        <ul>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Authentication">Authentication</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Organizations">Organizations</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Rostering & Provisioning">Rostering & Provisioning</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Users, Groups & Memberships">Users, Groups & Memberships</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Classes & Enrollments">Classes & Enrollments</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Class Materials">Class Materials</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Class Assignments">Class Assignments</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Interoperablity">Interoperablity</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <a href="http://product.comprodls.com"><h2>Product</h2></a>
+        <p>Provide endpoints for managing user entitlements (requires a valid authentication/access token) and other product management functions.</p>
+        <ul class="">
+          <li><a href="http://service-explorer.comprodls.com/?url=http://product.comprodls.com/swagger.json#/Entitlements">Entitlements</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://product.comprodls.com/swagger.json#/Activities, Tests  & Assessments">Activities, Tests & Assessments</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://product.comprodls.com/swagger.json#/Products Information">Products Information</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://product.comprodls.com/swagger.json#/Ingestion">Ingestion</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <a href="http://xapi.comprodls.com"><h2>Learning Experiences</h2></a>
+        <p>Tracking API for learning products. Products are assumed to be composed of learning activities, and users (who are entitled to those products) will generate one or more statements describing interactions/transactions against specific activities. This API provides functions to create, query and manage learning activities and associated statements.</p>
+        <ul class="">
+          <li><a href="http://service-explorer.comprodls.com/?url=http://xapi.comprodls.com/swagger.json#/Activities">Activities</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://xapi.comprodls.com/swagger.json#/Statements">Statements</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <a href="http://analytics.comprodls.com"><h2>Learning Analytics</h2></a>
+        <p>An API that exposes operations to retrieve analytic data.</p>
+        <ul class="">
+          <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/Organization">Organization</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/Product">Product</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/Group">Group</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/Class">Class</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/Calendar">Calendar</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/User">User</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/User-Progress">User-Progress</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/Archive">Archive</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/X-Metrics">X-Metrics</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <a href="http://activity.comprodls.com"><h2>Activity</h2></a>
+        <p>API for managing activity takes and state. An Activity is a unit of interactive content. An activity has a start-time, end-time and STATE information. It can stay in an incomplete state (paused) for a period of time, and resumed later (after few minutes, hours or days). The STATE information is used to seamlessly resume from where the student left off. When users interact with an ACTIVITY they create “STATE” i.e. subsequent interactions may require knowledge data from previous interactions.</p>
+        <ul>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://activity.comprodls.com/swagger.json#/Activity">Activity</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://activity.comprodls.com/swagger.json#/Attempt">Attempt</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://activity.comprodls.com/swagger.json#/Test">Test</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <a href="http://collab.comprodls.com"><h2>Collaboration</h2></a>
+        <p>The Collab API provides functions for managing the personal connections for an authenticated user i.e. start following other users and retrieve list of users following you. It also supports operation for posting comments (to a group, or to personal network), retrieving the activity feed the authenticated user.</p>
+        <ul>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://collab.comprodls.com/swagger.json#/Feed">Feed</a></li>
+          <li><a href="http://service-explorer.comprodls.com/?url=http://collab.comprodls.com/swagger.json#/Connections">Connections</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <p>&copy; 2017 Compro Technologies All Rights Reserved</p>
+    </footer>
+  </div>
+  <!-- /container -->
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
