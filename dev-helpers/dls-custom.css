@@ -58,6 +58,12 @@ body {
 .navbar-dls {
     background: #89bf04;
     border-color: #89bf04;
+    min-height: 70px;
+}
+
+.navbar-brand-dls {
+  font-size: 30px;
+  line-height: 35px;
 }
 
 .navbar-inverse .navbar-brand {
