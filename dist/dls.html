@@ -17,7 +17,7 @@
 
 <body>
 
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <nav class="navbar navbar-inverse navbar-fixed-top navbar-dls">
     <div class="container">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">comproDLS™ | Service Explorer</a>
@@ -37,10 +37,15 @@
     <div class="container">
       <div class="media" id="dls-banner">
         <div class="media-left">
-          <h1><i class="fa fa-life-ring" aria-hidden="true"></i></h1>
+          <div class="icon-wrapper">
+            <i class="fa fa-life-ring custom-icon"><span class="fix-editor">&nbsp;</span></i>
+          </div>
         </div>
         <div class="media-body">
-          <h2 class="media-heading">comproDLS™ <b>Learning Stack</b></h2>
+          <h2 class="media-heading">
+            <span class="media-heading-primary">comproDLS<sup>&trade;</sup></span>
+            <span class="media-heading-primary media-heading-secondary">Learning Stack</span>
+          </h2>
           <p>A set of cloud hosted APIs, components and data-stores which forms the core foundation of any next-gen learning solution.</p>
         </div>
       </div>
@@ -51,7 +56,7 @@
     <div class="row">
       <div class="col-md-4">
         <div class="service-box">
-          <a href="http://auth.comprodls.com"><h2>Authentication</h2></a>
+          <a href="http://auth.comprodls.com">Authentication</a>
           <p>comproDLS™ AUTH Services provide a core foundation for a next-gen learning organization, enabling every environment/institution /learning-group to setup their own fit-for-purpose digital learning environment.</p>
           <ul class="service-shortcuts">
             <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Authentication">Authentication</a></li>,
@@ -67,7 +72,7 @@
       </div>
       <div class="col-md-4">
         <div class="service-box">
-          <a href="http://product.comprodls.com"><h2>Product</h2></a>
+          <a href="http://product.comprodls.com">Product</a>
           <p>Provide endpoints for managing user entitlements (requires a valid authentication/access token) and other product management functions.</p>
           <ul class="service-shortcuts">
             <li><a href="http://service-explorer.comprodls.com/?url=http://product.comprodls.com/swagger.json#/Entitlements">Entitlements</a></li>,
@@ -79,7 +84,7 @@
       </div>
       <div class="col-md-4">
         <div class="service-box">
-          <a href="http://xapi.comprodls.com"><h2>Learning Experiences</h2></a>
+          <a href="http://xapi.comprodls.com">Experiences</a>
           <p>Tracking API for learning products. Products are assumed to be composed of learning activities, and users (who are entitled to those products) will generate one or more statements describing interactions/transactions against specific activities. This API provides functions to create, query and manage learning activities and associated statements.</p>
           <ul class="service-shortcuts">
             <li><a href="http://service-explorer.comprodls.com/?url=http://xapi.comprodls.com/swagger.json#/Activities">Activities</a></li>,
@@ -92,7 +97,7 @@
     <div class="row">
       <div class="col-md-4">
         <div class="service-box">
-          <a href="http://analytics.comprodls.com"><h2>Learning Analytics</h2></a>
+          <a href="http://analytics.comprodls.com">Learning Analytics</a>
           <p>An API that exposes operations to retrieve analytic data.</p>
           <ul class="service-shortcuts">
             <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/Organization">Organization</a></li>,
@@ -109,7 +114,7 @@
       </div>
       <div class="col-md-4">
         <div class="service-box">
-          <a href="http://activity.comprodls.com"><h2>Activity</h2></a>
+          <a href="http://activity.comprodls.com">Activity</a>
           <p>API for managing activity takes and state. An Activity is a unit of interactive content. An activity has a start-time, end-time and STATE information. It can stay in an incomplete state (paused) for a period of time, and resumed later (after few minutes, hours or days). The STATE information is used to seamlessly resume from where the student left off. When users interact with an ACTIVITY they create “STATE” i.e. subsequent interactions may require knowledge data from previous interactions.</p>
           <ul class="service-shortcuts">
             <li><a href="http://service-explorer.comprodls.com/?url=http://activity.comprodls.com/swagger.json#/Activity">Activity</a></li>,
@@ -120,7 +125,7 @@
       </div>
       <div class="col-md-4">
         <div class="service-box">
-          <a href="http://collab.comprodls.com"><h2>Collaboration</h2></a>
+          <a href="http://collab.comprodls.com">Collaboration</a>
           <p>The Collab API provides functions for managing the personal connections for an authenticated user i.e. start following other users and retrieve list of users following you. It also supports operation for posting comments (to a group, or to personal network), retrieving the activity feed the authenticated user.</p>
           <ul class="service-shortcuts">
             <li><a href="http://service-explorer.comprodls.com/?url=http://collab.comprodls.com/swagger.json#/Feed">Feed</a></li>,
