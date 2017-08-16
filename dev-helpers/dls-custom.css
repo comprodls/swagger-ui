@@ -5,8 +5,14 @@ body {
 
 .service-box {
   border: 1px solid #ddd;
-  padding: 10px 20px;
-  min-height: 350px;
+  padding: 0px 20px;
+  min-height: 280px;
+}
+
+.service-box > p {
+    line-height: 1.2;
+    color: #888;
+    font-style: italic;
 }
 
 .service-shortcuts {
@@ -24,6 +30,7 @@ body {
   display: inline;
   border-bottom: 1px solid;
   text-decoration: none;
+  font-size: 16px;
 }
 
 #dls-banner {
