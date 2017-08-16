@@ -129,7 +129,7 @@ export default class Topbar extends React.Component {
       <div className="topbar">
         <div className="wrapper">
           <div className="topbar-wrapper">
-            <Link href="#" title="comproDLS">
+            <Link href="http://service-explorer.comprodls.com" title="comproDLS">
               <img height="30" width="30" src={ Logo }/>
               <span>comproDLS™ | Service Explorer</span>
             </Link>
