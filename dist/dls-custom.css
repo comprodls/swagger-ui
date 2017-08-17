@@ -7,14 +7,14 @@ body {
   background: #fdfdfd;
   border: 1px solid #89bf04;
   padding: 8px 20px;
-  min-height: 280px;
+  min-height: 240px;
 }
 
 .service-box > p {
     font-family: "Open Sans";
     font-size: 14px;
     font-weight: normal;
-    line-height: 1.2;
+    line-height: 1.4;
     color: #727272;
     padding-top: 10px;
 }
@@ -45,6 +45,7 @@ body {
   font-size: 16px;
   font-weight: normal;
   color: #205f9f;
+  line-height: 1.4;
 }
 
 #dls-banner {
@@ -59,8 +60,8 @@ body {
 }
 
 .navbar-brand-dls {
-  font-size: 30px;
-  line-height: 26px;
+  font-size: 26px;
+  line-height: 40px;
 }
 
 .navbar-brand-dls span {
@@ -68,7 +69,8 @@ body {
 }
 
 .nav-dls {
-    font-size: 20px;
+  font-size: 26px;
+  margin-top: 10px;
 }
 
 .navbar-inverse .navbar-brand {
