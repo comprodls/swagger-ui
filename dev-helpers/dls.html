@@ -20,7 +20,7 @@
   <nav class="navbar navbar-inverse navbar-fixed-top navbar-dls">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand navbar-brand-dls" href="#">comproDLS™ | <strong>Service Explorer</strong></a>
+        <a class="navbar-brand navbar-brand-dls" href="#">comproDLS™ <span>|</span> <strong>Service Explorer</strong></a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav nav-dls navbar-nav navbar-right">
@@ -46,7 +46,7 @@
             <span class="media-heading-primary">comproDLS<sup>&trade;</sup></span>
             <span class="media-heading-primary media-heading-secondary">Learning Stack</span>
           </h2>
-          <p>A set of cloud hosted APIs, components and data-stores which forms the core foundation of any next-gen learning solution.</p>
+          <p>A set of cloud hosted APIs, components and data-stores which forms the core foundation of any <br>next-gen learning solution.</p>
         </div>
       </div>
     </div>
@@ -56,17 +56,26 @@
     <div class="row">
       <div class="col-md-4">
         <div class="service-box">
-          <a href="http://auth.comprodls.com">Authentication</a>
+          <a href="http://auth.comprodls.com">Auth</a>
           <p>Core foundation for a next-gen learning organization, enabling every environment / institution / learning-group to setup their own fit-for-purpose digital learning environment. Includes management of users, collaboration groups and classes.</p>
           <ul class="service-shortcuts">
             <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Authentication">Authentication</a></li>,
             <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Organizations">Organizations</a></li>,
             <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Rostering & Provisioning">Rostering & Provisioning</a></li>,
-            <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Users, Groups & Memberships">Users, Groups & Memberships</a></li>,
-            <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Classes & Enrollments">Classes & Enrollments</a></li>,
-            <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Class Materials">Class Materials</a></li>,
-            <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Class Assignments">Class Assignments</a></li>,
+            <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Users, Groups & Memberships">Users</a></li>,
             <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Interoperablity">Interoperablity</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="service-box">
+          <a href="http://auth.comprodls.com">Learning Groups</a>
+          <p>Core foundation for a next-gen learning organization, enabling every environment / institution / learning-group to setup their own fit-for-purpose digital learning environment. Includes management of users, collaboration groups and classes.</p>
+          <ul class="service-shortcuts">
+            <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Users, Groups & Memberships">Groups & Memberships</a></li>,
+            <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Classes">Classes & Enrollments</a></li>,
+            <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Class Materials">Class Materials</a></li>,
+            <li><a href="http://service-explorer.comprodls.com/?url=http://auth.comprodls.com/swagger.json#/Class Assignments">Class Assignments</a></li>
           </ul>
         </div>
       </div>
@@ -75,13 +84,16 @@
           <a href="http://product.comprodls.com">Product</a>
           <p>Product management, consumption and Entitlements of products to users.</p>
           <ul class="service-shortcuts">
-            <li><a href="http://service-explorer.comprodls.com/?url=http://product.comprodls.com/swagger.json#/Entitlements">Entitlements</a></li>,
+            <li><a href="http://service-explorer.comprodls.com/?url=http://product.comprodls.com/swagger.json#/Ingestion">Ingestion</a></li>,
+            <li><a href="http://service-explorer.comprodls.com/?url=http://product.comprodls.com/swagger.json#/Consumption">Consumption</a></li>,
             <li><a href="http://service-explorer.comprodls.com/?url=http://product.comprodls.com/swagger.json#/Activities, Tests  & Assessments">Activities, Tests & Assessments</a></li>,
-            <li><a href="http://service-explorer.comprodls.com/?url=http://product.comprodls.com/swagger.json#/Products Information">Products Information</a></li>,
-            <li><a href="http://service-explorer.comprodls.com/?url=http://product.comprodls.com/swagger.json#/Ingestion">Ingestion</a></li>
+            <li><a href="http://service-explorer.comprodls.com/?url=http://product.comprodls.com/swagger.json#/Entitlements">Entitlements</a></li>
           </ul>
         </div>
       </div>
+    </div>
+    <br>
+    <div class="row">
       <div class="col-md-4">
         <div class="service-box">
           <a href="http://xapi.comprodls.com">Experiences</a>
@@ -92,18 +104,24 @@
           </ul>
         </div>
       </div>
-    </div>
-    <br>
-    <div class="row">
+      <div class="col-md-4">
+        <div class="service-box">
+          <a href="http://analytics.comprodls.com">Learning Progress</a>
+          <p>Aggregations and analytics across users, classes, groups, products within a learning organization.</p>
+          <ul class="service-shortcuts">
+            <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/User Progress on Materials">User Progress on Materials</a></li>,
+            <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/Class Gradebook & Aggregations">Class Gradebook</a></li>,
+            <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/Class Calendar">Class Calendar</a></li>
+          </ul>
+        </div>
+      </div>
       <div class="col-md-4">
         <div class="service-box">
           <a href="http://analytics.comprodls.com">Learning Analytics</a>
           <p>Aggregations and analytics across users, classes, groups, products within a learning organization.</p>
           <ul class="service-shortcuts">
             <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/User Aggregations">User Aggregations</a></li>,
-            <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/User Progress on Materials">User Progress on Materials</a></li>,
-            <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/Class Gradebook & Aggregations">Class Gradebook & Aggregations</a></li>,
-            <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/Class Calendar">Class Calendar</a></li>,
+            <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/Class Gradebook & Aggregations">Class Aggregations</a></li>,
             <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/Group Aggregations">Group Aggregations</a></li>,
             <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/Product Aggregations">Product Aggregations</a></li>,
             <li><a href="http://service-explorer.comprodls.com/?url=http://analytics.comprodls.com/swagger.json#/Organization Aggregations">Organization Aggregations</a></li>,
@@ -111,6 +129,9 @@
           </ul>
         </div>
       </div>
+    </div>
+    <br>
+    <div class="row">
       <div class="col-md-4">
         <div class="service-box">
           <a href="http://activity.comprodls.com">Activity</a>
