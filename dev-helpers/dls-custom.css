@@ -24,6 +24,11 @@ body {
   font-size: 30px;
   font-weight: bolder;
   color: #3c3c3c;
+  text-decoration: none;
+}
+
+.service-box > a:hover {
+  border-bottom:2px solid;
 }
 
 .service-shortcuts {
@@ -45,11 +50,11 @@ body {
   font-size: 16px;
   font-weight: normal;
   color: #205f9f;
-  line-height: 1.4;
+  line-height: 1.8;
 }
 
 #dls-banner {
-  padding-left: 5%;
+  padding-left: 8%;
   padding-right: 5%;
 }
 
@@ -60,8 +65,14 @@ body {
 }
 
 .navbar-brand-dls {
+  font-family: "Open Sans";
   font-size: 26px;
   line-height: 40px;
+}
+
+.navbar-brand-dls sup {
+  font-family: Arial;
+  font-size: .65em;
 }
 
 .navbar-brand-dls span {
@@ -69,7 +80,8 @@ body {
 }
 
 .nav-dls {
-  font-size: 26px;
+  font-family: "Open Sans";
+  font-size: 22px;
   margin-top: 10px;
 }
 
@@ -134,6 +146,6 @@ body {
 }
 .icon-wrapper {
   display: inline-block;
-  padding-top: 9px;
+  padding-top: 26px;
   padding-right: 20px;
 }
