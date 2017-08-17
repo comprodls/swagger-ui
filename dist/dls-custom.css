@@ -85,6 +85,11 @@ body {
     margin-bottom: 15px;
 }
 
+.media-heading sup {
+    font-family: Arial;
+    font-size: .65em;
+}
+
 .media-heading .media-heading-primary {
   font-family: "Open Sans";
   font-size: 45px;
